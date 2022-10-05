@@ -1,0 +1,36 @@
+﻿@model ClientApp.Models.UserViewModel
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<form asp-action="addUser" asp-controller="Users" method="post">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label>Client Name:</label>
+                <input asp-for="clientName" type="text" class="form-control required" placeholder="Enter client name" tabindex="1">
+            </div>
+            <div class="form-group">
+                <label>Date Registered:</label>
+                <input asp-for="dateRegistered" type="datetime" class="form-control required" value="@DateTime.Now.ToString("yyyy-MM-dd")" tabindex="2">
+            </div>
+            <div class="form-group">
+                <label>Location:</label>
+                <input asp-for="Location" type="text" class="form-control required" placeholder="Enter Location" tabindex="3">
+            </div>
+            <div class="form-group">
+                <label>Number of Users:</label>
+                <input asp-for="NumberofUsers" type="text" class="form-control required" placeholder="Number of Users" tabindex="4">
+            </div>
+            <div class="form-group">
+                <div asp-validation-summary="All" class="text-danger"></div>
+            </div>
+            <div class="card-footer">
+                <center>
+                    <button type="submit" class="btn btn-primary">Create Client</button>
+                    <a asp-action="Index" asp-controller="Users" class="btn btn-secondary">Cancel</a>
+                </center>
+            </div>
+        </div>
+    </div>
+</form>

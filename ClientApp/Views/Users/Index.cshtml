@@ -1,0 +1,35 @@
+﻿@model List<ClientApp.Models.UserViewModel>
+@{
+    ViewData["Title"] = "Users";
+}
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <a asp-action="addUser" asp-controller="Users" class="btn btn-success">Create</a>
+        </div>
+    </div>
+
+    <br />
+    <br />
+<table class="table">
+    <tdead>
+        <tr>
+            <th>Client Name</th>
+            <th>Date Registered</th>
+            <th>Location</th>
+            <th>Number of Users</th>
+        </tr>
+    </tdead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.clientName</td>
+                <td>@user.dateRegistered</td>
+                <td>@user.Location</td>
+                <td>@user.NumberofUsers</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
